@@ -2,6 +2,8 @@
 <html>
 
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="generalStyles.css">
 <style>
 table {
   font-family: arial, sans-serif;
@@ -19,15 +21,18 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-#rulesTable.hidePriority td:nth-child(4),
-#rulesTable.hidePriority td:nth-child(5){
-  display:none;
-}
 
 #rulesTable.hidePriority th:nth-child(4),
 #rulesTable.hidePriority th:nth-child(5){
   display: none;
 }
+
+#rulesTable.hidePriority td:nth-child(4),
+#rulesTable.hidePriority td:nth-child(5){
+  display:none;
+}
+
+
 
 #rulesTable.hideLessImportant tr[name="lessImportant"]
 {
@@ -41,30 +46,73 @@ tr:nth-child(even) {
   background-color: #FFFFFF;
 }
 </style>
+
+<style>
+/* Modal a.k.a. popup window for more info on a rule */
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: visible; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
 </head>
 
 <body>
 
 <h1>Uffi</h1>
-<p1>Simple checklist tool to aid in code reviewing based on agreed upon rules.</p1>
-
-<br></br>
+<p>Simple checklist tool to aid in code reviewing based on agreed upon rules.</p>
+<p>
 <button onclick='document.getElementById("rulesTable").classList.toggle("hidePriority")'>Show/hide priority columns</button>
 <button onclick='document.getElementById("rulesTable").classList.toggle("hideLessImportant")'>Show/hide less important rules</button>
-<p><button onclick="sortTable(0)">Sort by name</button>
-<button onclick="sortTable(1)">Sort by tags</button>
-<button onclick="sortTable(2)">Sort by status</button></p>
+</p>
 
 <table id = "rulesTable">
-  <tr name="moreImportant">
-    <th>Rule name</th>
-    <th>Tags</th>
-    <th>Status</th>
+  <tr>
+    <th><button onclick="sortTable(0)">Rule name</button></th>
+    <th><button onclick="sortTable(1)">Tags</button></th>
+    <th><button onclick="sortTable(2)">Status</button></th>
 	<th>Workload</th>
 	<th>Importance</th>
   </tr>
   <tr name="moreImportant">
-    <td>zDisinformation</td>
+    <td>zDisinformation
+	<br><button id="myBtn">More info</button></br>
+	</td>
     <td>Naming, classes, variables, functions</td>
     <td>Skip</td>
 	<td>2</td>
@@ -84,44 +132,46 @@ tr:nth-child(even) {
 	<td>2</td>
 	<td>3</td>
   </tr>
+  <tr name="moreImportant">
+    <td>Proper naming of variables, functions and classes</td>
+    <td>Naming, classes, variables, functions</td>
+    <td>Skip</td>
+	<td>2</td>
+	<td>2</td>
+  </tr>
 </table>
 
-<script>
-function sortTable(columnToSort) {
-  var table, rows, switching, i, x, y, shouldSwitch;
-  table = document.getElementById("rulesTable");
-  switching = true;
-  /*Make a loop that will continue until
-  no switching has been done:*/
-  while (switching) {
-    //start by saying: no switching is done:
-    switching = false;
-    rows = table.rows;
-    /*Loop through all table rows (except the
-    first, which contains table headers):*/
-    for (i = 1; i < (rows.length - 1); i++) {
-      //start by saying there should be no switching:
-      shouldSwitch = false;
-      /*Get the two elements you want to compare,
-      one from current row and one from the next:*/
-      x = rows[i].getElementsByTagName("TD")[columnToSort];
-      y = rows[i + 1].getElementsByTagName("TD")[columnToSort];
-      //check if the two rows should switch place:
-      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-        //if so, mark as a switch and break the loop:
-        shouldSwitch = true;
-        break;
-      }
-    }
-    if (shouldSwitch) {
-      /*If a switch has been marked, make the switch
-      and mark that a switch has been done:*/
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-      switching = true;
-    }
-  }
-}
-</script>
 
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Pronouncable naming</h2>
+	<p>The name should answer:
+<br>- Why it exists
+<br>- What it does
+<br>- How it is used</P>
+
+<table id = "ruleExampleCode">
+  <tr>
+    <td>1</td>
+    <td>Code</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Code</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Code</td>
+  </tr>
+  </div>
+
+</div>
+
+<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
