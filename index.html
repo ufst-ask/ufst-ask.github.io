@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="generalStyles.css">
 
 </head>
 
-<body onload="lessImportantVisible()">
+<body>
 
 <h1>Uffi</h1>
-<p>Simple checklist tool to aid in code reviewing based on agreed upon rules.</p>
-<p>
-<button onclick='document.getElementById("rulesTable").classList.toggle("hidePriority")'>Show/hide priority columns</button>
-<button onclick='document.getElementById("rulesTable").classList.toggle("hideLessImportant")'>Show/hide less important rules</button>
-</p>
+<p1>Simple checklist tool to aid in code reviewing based on agreed upon rules.</p1>
+
+<br></br>
+<button class="button" onclick='document.getElementById("rulesTable").classList.toggle("hidePriority")'>Show/hide priority columns</button>
+<button class="button"onclick='document.getElementById("rulesTable").classList.toggle("hideLessImportant")'>Show/hide less important rules</button>
+<br></br>
+
+<!--<button onclick="sortTable(2)">Sort status</button>-->
 
 <table id = "rulesTable">
-  <tr>
-    <th><button onclick="sortTable(0)">Rule name</button></th>
-    <th><button onclick="sortTable(1)">Tags</button></th>
-    <th><button onclick="sortTable(2)">Skip, No, Yes</button></th>
-	<th>Workload</th>
-	<th>Importance</th>
+  <tr name="moreImportant">
+    <th><button class="button" onclick="sortTable(0)">Rule name</button></th>
+    <th><button class="button" onclick="sortTable(1)">Sort by tags</button</th>
+    <td>Skip, No, Yes</th>
+	<th><button class="button" onclick="sortTable(3)">Workload</button</th>
+	<th><button class="button" onclick="sortTable(4)">Importance</button</th>
   </tr>
   <tr name="moreImportant">
     <td>zDisinformation
-	<br><button id="myBtn">More info</button></br>
-	</td>
+	<button id="BtnDisinformation" class="button">Disinformation</button>
     <td>Naming, classes, variables, functions</td>
-    <td>
-	<input type="range" id="status" name="status" min="0" max="2">
+    <td><input type="range" id="status" name="status" min="0" max="2"></td>
 	<td>2</td>
 	<td>3</td>
   </tr>
   <tr name="lessImportant">
     <td>aPronouncable naming</td>
     <td>Naming, classes, variables, functions</td>
-    <input type="range" id="status" name="status" min="0" max="2">
+    <td><input type="range" id="status" name="status" min="0" max="2"></td>
+	<td>4</td>
 	<td>2</td>
-	<td>3</td>
   </tr>
   <tr name="moreImportant">
     <td>dSingle responsibility, CLASS</td>
     <td>SOLID, classes</td>
-    <td>Skip</td>
-	<td>2</td>
+    <td><input type="range" id="status" name="status" min="0" max="2"></td>
+	<td>1</td>
 	<td>3</td>
   </tr>
   <tr name="moreImportant">
-    <td>Proper naming of variables, functions and classes</td>
-    <td>Naming, classes, variables, functions</td>
-    <td>Skip</td>
+    <td>123123 responsibility, CLASS</td>
+    <td>SOLID, classes</td>
+    <td><input type="range" id="status" name="status" min="0" max="2"></td>
 	<td>2</td>
-	<td>2</td>
+	<td>1</td>
   </tr>
 </table>
-
-
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
