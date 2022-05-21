@@ -7,7 +7,7 @@
 
 </head>
 
-<body>
+<body onload="lessImportantVisible()">
 
 <h1>Uffi</h1>
 <p>Simple checklist tool to aid in code reviewing based on agreed upon rules.</p>
@@ -20,7 +20,7 @@
   <tr>
     <th><button onclick="sortTable(0)">Rule name</button></th>
     <th><button onclick="sortTable(1)">Tags</button></th>
-    <th><button onclick="sortTable(2)">Status</button></th>
+    <th><button onclick="sortTable(2)">Skip, No, Yes</button></th>
 	<th>Workload</th>
 	<th>Importance</th>
   </tr>
@@ -29,14 +29,15 @@
 	<br><button id="myBtn">More info</button></br>
 	</td>
     <td>Naming, classes, variables, functions</td>
-    <td>Skip</td>
+    <td>
+	<input type="range" id="status" name="status" min="0" max="2">
 	<td>2</td>
 	<td>3</td>
   </tr>
   <tr name="lessImportant">
     <td>aPronouncable naming</td>
     <td>Naming, classes, variables, functions</td>
-    <td>Skip</td>
+    <input type="range" id="status" name="status" min="0" max="2">
 	<td>2</td>
 	<td>3</td>
   </tr>

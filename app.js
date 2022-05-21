@@ -33,6 +33,15 @@ function sortTable(columnToSort) {
   }
 }
 
+function lessImportantVisible() {
+	//document.getElementById("rulesTable").classList.toggle("hidePriority");
+	//document.getElementById("rulesTable").hide();
+	var myBox = document.querySelector("#rulesTable").addEventListener("click", function() {
+
+  this.classList.toggle('bg-red');
+});
+}
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
