@@ -1,9 +1,9 @@
 <meta charset="utf8" />
 <html>
-  <script src='/dev/git/ufst-ask.github.io/sqljs/sql-wasm.js'></script>
+  <script src='sqljs/sql-wasm.js'></script>
   <script>
     config = {
-      locateFile: filename => `/dev/git/ufst-ask.github.io/sql.db`
+      locateFile: filename => `sql.db`
     }
     // The `initSqlJs` function is globally provided by all of the main dist files if loaded in the browser.
     // We must specify this locateFile function if we are loading a wasm file from anywhere other than the current html page's folder.
