@@ -20,7 +20,7 @@ const dataObj;
     .then(data => {
         console.log(data.ruleName)
         document.querySelector("#jsonDebug").innerText = data.sentence
-        append_json(data)
+        dataObj = data
     })
 </script>
 
