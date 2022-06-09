@@ -15,27 +15,30 @@
 <div id="jsonDebug2"></div>
 
 <script>
+    dataObj;
     fetch("rules.json")
     .then(response => response.json())
     .then(data => {
         console.log(data.rules[0].ruleName)
         document.querySelector("#jsonDebug").innerText = data.rules[0].ruleName
-        const dataObj = data
+        dataObj = data
     })
 
 </script>
 
 <script>
-    console.log(dataObj.rules[0].ruleName)
+    console.log(dataObj.rules[0].ruleName) //Uncaught ReferenceError: dataObj is not defined. Doesn't work.
+    //Scope error, need to have dataObj created outside fetch. It may have been fixed now.
+
     //this function appends the json data to the table 'gable'
     function append_json(data) {
         var table = document.getElementById('rulesTable');
-        data.forEach(function (object) {
+        dataObj.forEach(function (object) {
             var tr = document.createElement('tr');
             tr.innerHTML = '<td>' + object.ruleName + '</td>' +
                 '<td>' + object.tag + '</td>';
             table.appendChild(tr);
-            console.log(data.ruleName)
+            console.log(dataObj.ruleName)
         });
     }
 </script>
