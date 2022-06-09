@@ -12,13 +12,30 @@
 
 <h1>Testing json</h1>
 <div id="jsonDebug"></div>
+<div id="jsonDebug2"></div>
+const dataObj;
 <script>
     fetch("rules.json")
     .then(response => response.json())
     .then(data => {
         console.log(data.sentence)
         document.querySelector("#jsonDebug").innerText = data.sentence
+        append_json(data)
     })
+</script>
+
+<script>
+
+    //this function appends the json data to the table 'gable'
+    function append_json(data) {
+        var table = document.getElementById('rulesTable');
+        data.forEach(function (object) {
+            var tr = document.createElement('tr');
+            tr.innerHTML = '<td>' + object.ruleName + '</td>' +
+                '<td>' + object.tag + '</td>';
+            table.appendChild(tr);
+        });
+    }
 </script>
 
 <h1>Uffi</h1>
@@ -40,14 +57,14 @@
 	<th><button class="button" onclick="sortTable(4)">Importance</button></th>
   </tr>
   <tr name="moreImportant">
-    <td><button id="BtnMoreInfo" class="button" onclick='openModal()'>Disinformation</button></td>
+    <td><button id="BtnMoreInfo" class="button" onclick='openModal()'>dataObj.rules[0].ruleName</button></td>
     <td>Naming, classes, variables, functions</td>
     <td><input type="range" id="status" name="status" min="0" max="2"></td>
-	<td>2</td>
+	<td>22</td>
 	<td>3</td>
   </tr>
   <tr name="lessImportant">
-    <td><button id="BtnMoreInfo" class="button">Pronouncable naming</button></td>
+    <td><button id="BtnMoreInfo2" class="button">Pronouncable naming</button></td>
     <td>Naming, classes, variables, functions</td>
     <td><input type="range" id="status" name="status" min="0" max="2"></td>
 	<td>4</td>

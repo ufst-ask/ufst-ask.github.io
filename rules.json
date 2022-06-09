@@ -1,3 +1,10 @@
 {
-  "sentence": "Hello World"
+  "rules": [
+    {
+      "ruleName": "Disinformationnn",
+      "tags": ["naming", "classes", "variables", "functions"],
+      "references": ["Link text here", "URL here"]
+    }
+
+  ]
 }
