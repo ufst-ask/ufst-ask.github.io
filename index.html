@@ -15,18 +15,16 @@
 <div id="jsonDebug2"></div>
 
 <script>
-    fetch("rules.json")
+    const dataObj = await fetch("rules.json")
     .then(response => response.json())
     .then(data => {
-        console.log(data.rules[0].ruleName)
+        console.log("1 ", data.rules[0].ruleName)
         document.querySelector("#jsonDebug").innerText = data.rules[0].ruleName
-        var dataObj = data
     })
-
 </script>
 
 <script>
-    console.log(dataObj.rules[0].ruleName) //Uncaught ReferenceError: dataObj is not defined
+    console.log("2 ", data.rules[0].ruleName)//Uncaught ReferenceError: dataObj is not defined
 
     //this function appends the json data to the table 'gable'
     //function append_json(data) {
@@ -38,6 +36,7 @@
             table.appendChild(tr);
             console.log(dataObj.ruleName)
         });
+    console.log("3 ", data.rules[0].ruleName)
     //}
 </script>
 
