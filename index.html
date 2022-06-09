@@ -9,6 +9,18 @@
 
 <body>
 
+
+<h1>Testing json</h1>
+<div id="jsonDebug"></div>
+<script>
+    fetch("rules.json")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.sentence)
+        document.querySelector("#jsonDebug").innerText = data.sentence
+    })
+</script>
+
 <h1>Uffi</h1>
 <p1>Simple checklist tool to aid in code reviewing based on agreed upon rules.</p1>
 
@@ -22,10 +34,10 @@
 <table id = "rulesTable">
   <tr name="moreImportant">
     <th><button class="button" onclick="sortTable(0)">Rule name</button></th>
-    <th><button class="button" onclick="sortTable(1)">Sort by tags</button</th>
+    <th><button class="button" onclick="sortTable(1)">Sort by tags</button></th>
     <td>Skip, No, Yes</th>
-	<th><button class="button" onclick="sortTable(3)">Workload</button</th>
-	<th><button class="button" onclick="sortTable(4)">Importance</button</th>
+	<th><button class="button" onclick="sortTable(3)">Workload</button></th>
+	<th><button class="button" onclick="sortTable(4)">Importance</button></th>
   </tr>
   <tr name="moreImportant">
     <td><button id="BtnMoreInfo" class="button" onclick='openModal()'>Disinformation</button></td>
