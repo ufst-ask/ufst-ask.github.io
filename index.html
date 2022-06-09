@@ -13,19 +13,20 @@
 <h1>Testing json</h1>
 <div id="jsonDebug"></div>
 <div id="jsonDebug2"></div>
-const dataObj;
+
 <script>
     fetch("rules.json")
     .then(response => response.json())
     .then(data => {
-        console.log(data.ruleName)
-        document.querySelector("#jsonDebug").innerText = data.sentence
-        dataObj = data
+        console.log(data.rules[0].ruleName)
+        document.querySelector("#jsonDebug").innerText = data.rules[0].ruleName
+        const dataObj = data
     })
+
 </script>
 
 <script>
-
+    console.log(dataObj.rules[0].ruleName)
     //this function appends the json data to the table 'gable'
     function append_json(data) {
         var table = document.getElementById('rulesTable');
