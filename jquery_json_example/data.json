@@ -1,15 +1,25 @@
 [{
 	"name": "Disinformation",
-	"tags": ["naming", "classes", "variables", "functions"],
+	"tags": ["naming, ", "classes, ", "variables, ", "functions", ""],
 	"status": 0,
 	"workload": 2,
-	"importance": 3
+	"importance": 3,
+	"infoBody" : "This is an explanation...",
+	"exampleBad" : "don't do this...",
+	"exampleGood" : "instead do this...",
+	"references" : ["SOLID Single Responsibility", "https://lmgtfy.app/?q=solid+single+responsibility",
+					"Google", "https://google.com/"]
 	},
 	{
-		"name": "Super duper naming",
-		"tags": ["naming", "classes", "variables", "functions"],
+		"name": "Super naming-ish",
+		"tags": ["naming, ", "classes, ", "", "", ""],
 		"status": 0,
-		"workload": 2,
-		"importance": 3
+		"workload": 1,
+		"importance": 5,
+		"infoBody" : "This is ALSO an explanation...",
+		"exampleBad" : "really don't do this...",
+		"exampleGood" : "kind of instead do this...",
+		"references" : ["Google", "https://google.com/",
+			"", ""]
 	}
 ]

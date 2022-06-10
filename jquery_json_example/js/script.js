@@ -1,17 +1,27 @@
 function devLoad() {
 	const txt = "[{\n" +
 		"\t\"name\": \"Disinformation\",\n" +
-		"\t\"tags\": [\"naming\", \"classes\", \"variables\", \"functions\"],\n" +
+		"\t\"tags\": [\"naming, \", \"classes, \", \"variables, \", \"functions\", \"\"],\n" +
 		"\t\"status\": 0,\n" +
 		"\t\"workload\": 2,\n" +
-		"\t\"importance\": 3\n" +
+		"\t\"importance\": 3,\n" +
+		"\t\"infoBody\" : \"This is an explanation...\",\n" +
+		"\t\"exampleBad\" : \"don't do this...\",\n" +
+		"\t\"exampleGood\" : \"instead do this...\",\n" +
+		"\t\"references\" : [\"SOLID Single Responsibility\", \"https://lmgtfy.app/?q=solid+single+responsibility\",\n" +
+		"\t\t\t\t\t\"Google\", \"https://google.com/\"]\n" +
 		"\t},\n" +
 		"\t{\n" +
-		"\t\t\"name\": \"Super duper naming\",\n" +
-		"\t\t\"tags\": [\"naming\", \"classes\", \"variables\", \"functions\"],\n" +
+		"\t\t\"name\": \"Super naming-ish\",\n" +
+		"\t\t\"tags\": [\"naming, \", \"classes, \", \"\", \"\", \"\"],\n" +
 		"\t\t\"status\": 0,\n" +
-		"\t\t\"workload\": 2,\n" +
-		"\t\t\"importance\": 3\n" +
+		"\t\t\"workload\": 1,\n" +
+		"\t\t\"importance\": 5,\n" +
+		"\t\t\"infoBody\" : \"This is ALSO an explanation...\",\n" +
+		"\t\t\"exampleBad\" : \"really don't do this...\",\n" +
+		"\t\t\"exampleGood\" : \"kind of instead do this...\",\n" +
+		"\t\t\"references\" : [\"Google\", \"https://google.com/\",\n" +
+		"\t\t\t\"\", \"\"]\n" +
 		"\t}\n" +
 		"]"
 	const resp = JSON.parse(txt);
@@ -33,9 +43,9 @@ function devLoad() {
 			// second column data
 			tr.append('<td class="py-1 px-2">' + resp[k].name + '</td>')
 			// third column data
-			tr.append('<td class="py-1 px-2">' + resp[k].tags[0] + '</td>')
+			tr.append('<td class="py-1 px-2">' + resp[k].tags[0] + resp[k].tags[1] + resp[k].tags[2] + resp[k].tags[3] + resp[k].tags[4] + '</td>')
 			// fourth column data
-			tr.append('<td class="py-1 px-2">' + resp[k].status + '</td>')
+			tr.append('<td class="py-1 px-2"> <input type="range" id="status" name="status" min="0" max="2" value="0"> </td>')
 			// fifth column data
 			tr.append('<td class="py-1 px-2">' + resp[k].workload + '</td>')
 			// sixth column data
