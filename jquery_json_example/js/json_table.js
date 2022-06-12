@@ -12,7 +12,7 @@ function devLoad() {
 		"\t\t\t\t\t\"Google\", \"https://google.com/\"]\n" +
 		"\t},\n" +
 		"\t{\n" +
-		"\t\t\"name\": \"Super naming-ish\",\n" +
+		"\t\t\"name\": \"A Super naming-ish\",\n" +
 		"\t\t\"tags\": [\"naming, \", \"classes, \", \"\", \"\", \"\"],\n" +
 		"\t\t\"status\": 0,\n" +
 		"\t\t\"workload\": 1,\n" +

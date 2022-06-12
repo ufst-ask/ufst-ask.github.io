@@ -10,36 +10,6 @@
 <body>
 
 
-<h1>Testing json</h1>
-<div id="jsonDebug"></div>
-<div id="jsonDebug2"></div>
-
-<script>
-    const dataObj = await fetch("rules.json")
-    .then(response => response.json())
-    .then(data => {
-        console.log("1 ", data.rules[0].ruleName)
-        document.querySelector("#jsonDebug").innerText = data.rules[0].ruleName
-    })
-</script>
-
-<script>
-    console.log("2 ", data.rules[0].ruleName)//Uncaught ReferenceError: dataObj is not defined
-
-    //this function appends the json data to the table 'gable'
-    //function append_json(data) {
-        var table = document.getElementById('rulesTable');
-        dataObj.forEach(function (object) {
-            var tr = document.createElement('tr');
-            tr.innerHTML = '<td>' + object.ruleName + '</td>' +
-                '<td>' + object.tag + '</td>';
-            table.appendChild(tr);
-            console.log(dataObj.ruleName)
-        });
-    console.log("3 ", data.rules[0].ruleName)
-    //}
-</script>
-
 <h1>Uffi</h1>
 <p1>Simple checklist tool to aid in code reviewing based on agreed upon rules.</p1>
 
@@ -120,6 +90,6 @@ Circle makeCircle(Point center, double radius);
 </div>
 </div>
 
-<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="jquery_json_example/js/app.js"></script>
 </body>
 </html>

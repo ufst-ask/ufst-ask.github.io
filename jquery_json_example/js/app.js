@@ -1,6 +1,6 @@
 function sortTable(columnToSort) {
   var table, rows, switching, i, x, y, shouldSwitch;
-  table = document.getElementById("rulesTable");
+  table = document.getElementById("table-list");
   switching = true;
   /*Make a loop that will continue until
   no switching has been done:*/
