@@ -1,4 +1,5 @@
 function sortTable(columnToSort) {
+  console.log("Sorting table: " + columnToSort);
   var table, rows, switching, i, x, y, shouldSwitch;
   table = document.getElementById("table-list");
   switching = true;

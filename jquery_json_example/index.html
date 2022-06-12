@@ -10,7 +10,7 @@
 	    <script src="./js/jquery-3.6.0.min.js"></script>
 	    <script src="./js/bootstrap.js"></script> <!-- Unsure about this reference. But it all seems to work anyway -->
 	    <script src="./js/json_table.js"></script>
-		<script src="./js/app.js"></script>
+
 	    <!-- Custom CSS -->
 	    <style>
  
@@ -29,12 +29,17 @@
 	                <table class="table table-bordered table-striped" id="table-list">
 	                    <thead>
 	                        <tr class="bg-primary bg-gradient text-white">
-	                            <th class="text-capitalize text-center py-1 px-2">ID</th>
-	                            <th class="text-capitalize text-center py-1 px-2"><button class="buttonSort" onclick="sortTable(0)">name</button></th>
-	                            <th class="text-capitalize text-center py-1 px-2">tags</th>
+	                            <th class="text-capitalize text-center py-1 px-2">
+									<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(0)">ID</button></th>
+	                            <th class="text-capitalize text-center py-1 px-2">
+									<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(1)">Name</button></th>
+	                            <th class="text-capitalize text-center py-1 px-2">
+									<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(2)">Tags</button></th>
 	                            <th class="text-capitalize text-center py-1 px-2">Skip, No, Yes</th>
-	                            <th class="text-capitalize text-center py-1 px-2">workload</th>
-	                            <th class="text-capitalize text-center py-1 px-2">importance</th>
+	                            <th class="text-capitalize text-center py-1 px-2">
+									<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(4)">Workload</button></th>
+	                            <th class="text-capitalize text-center py-1 px-2">
+									<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(5)">Importance</button></th>
 	                        </tr>
 	                    </thead>
 	                    <tbody>
@@ -51,5 +56,5 @@
 	        <center><button type="button" class="btn btn-sm btn-success rounded-0 my-2" id="reload_data">Reload Data</button></center>
 	    </div>
 	</body>
- 
+	<script src="./js/app.js"></script>
 	</html>

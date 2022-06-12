@@ -1,6 +1,6 @@
 function devLoad() {
 	const txt = "[{\n" +
-		"\t\"name\": \"Disinformation\",\n" +
+		"\t\"name\": \"B Disinformation\",\n" +
 		"\t\"tags\": [\"naming, \", \"classes, \", \"variables, \", \"functions\", \"\"],\n" +
 		"\t\"status\": 0,\n" +
 		"\t\"workload\": 2,\n" +
