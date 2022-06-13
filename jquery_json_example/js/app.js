@@ -1,5 +1,4 @@
 function sortTable(columnToSort) {
-  console.log("Sorting table: " + columnToSort);
   var table, rows, switching, i, x, y, shouldSwitch;
   table = document.getElementById("table-list");
   switching = true;
@@ -55,6 +54,7 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function openModal() {
   modal.style.display = "block";
+  console.log("modal: " + modal);
 }
 
 // When the user clicks on <span> (x), close the modal

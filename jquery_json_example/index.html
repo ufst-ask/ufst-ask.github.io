@@ -7,6 +7,7 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <title>Populating HTML Table from JSON File (jQuery/Ajax)</title>
 	    <link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="stylesheetNonBootstrap.css">
 	    <script src="./js/jquery-3.6.0.min.js"></script>
 	    <script src="./js/bootstrap.js"></script> <!-- Unsure about this reference. But it all seems to work anyway -->
 	    <script src="./js/json_table.js"></script>
@@ -16,8 +17,10 @@
  
 	    </style>
 	</head>
- 
+
 	<body class="bg-light">
+
+	<td><button id="BtnMoreInfo" class="button">Pronouncable naming</button></td>
 
 	    <div class="container py-3" id="page-container">
 	        <h3><b>Uffi</b></h3>
@@ -55,6 +58,39 @@
 	        <hr>
 	        <center><button type="button" class="btn btn-sm btn-success rounded-0 my-2" id="reload_data">Reload Data</button></center>
 	    </div>
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Pronouncable naming</h2>
+			<p>The name should answer:
+				<br>- Why it exists
+				<br>- What it does
+				<br>- How it is used</P>
+			<br>
+
+			<p style="font-weight:bold">Example</p>
+			<p style="font-family:consolas">
+				//Bad
+				<br>
+				Circle makeCircle(double x, double y, double radius);
+				<br>
+				<br>
+				//Good
+				<br>
+				Circle makeCircle(Point center, double radius);
+			</p>
+
+			<br>
+			<br>
+			<p><a href="https://stackify.com/solid-design-principles/">SOLID design principles, single responsibility</a></p>
+
+		</div>
+	</div>
+
 	</body>
 	<script src="./js/app.js"></script>
 	</html>
