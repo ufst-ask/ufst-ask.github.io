@@ -1,6 +1,8 @@
+var resp = null;
+
 function devLoad() {
 	const txt = "[{\n" +
-		"\t\"name\": \"B Disinformation\",\n" +
+		"\t\"name\": \"Pronouncable naming\",\n" +
 		"\t\"tags\": [\"naming, \", \"classes, \", \"variables, \", \"functions\", \"\"],\n" +
 		"\t\"status\": 0,\n" +
 		"\t\"workload\": 2,\n" +
@@ -23,8 +25,8 @@ function devLoad() {
 		"\t\t\"references\" : [\"Google\", \"https://google.com/\",\n" +
 		"\t\t\t\"\", \"\"]\n" +
 		"\t}\n" +
-		"]"
-	const resp = JSON.parse(txt);
+		"] 	"
+	resp = JSON.parse(txt);
 
 
 	var table = $('#table-list')
@@ -36,12 +38,20 @@ function devLoad() {
 		var i = 1;
 		// looping the returned data
 		Object.keys(resp).map(k => {
+
+			/*let btn = document.createElement("button");
+			btn.innerHTML = "Submit";
+			// btn.type = "submit";
+			btn.name = "formBtn";*/
+			// document.body.appendChild(btn);
+
 			// creating new table row element
 			var tr = $('<tr>')
 			// first column data
 			tr.append('<td class="py-1 px-2 text-center">' + (i++) + '</td>')
 			// second column data
-			tr.append('<td class="py-1 px-2">' + resp[k].name + '</td>')
+
+			tr.append('<td class="py-1 px-2"> <button id="BtnMoreInfo23" class="button" onclick = "openMoreInfo('+k+')">More info</button></td>')
 			// third column data
 			tr.append('<td class="py-1 px-2">' + resp[k].tags[0] + resp[k].tags[1] + resp[k].tags[2] + resp[k].tags[3] + resp[k].tags[4] + '</td>')
 			// fourth column data
@@ -49,7 +59,7 @@ function devLoad() {
 			// fifth column data
 			tr.append('<td class="py-1 px-2">' + resp[k].workload + '</td>')
 			// sixth column data
-			tr.append('<td class="py-1 px-2">' + resp[k].importance + '</td>')
+			tr.append('<td class="py-1 px-2">' + resp[k].importance  + '</td>')
 
 			// Append table row item to table body
 			table.find('tbody').append(tr)
@@ -117,6 +127,7 @@ function load_data() {
 	            }
 	        })
 	    }, 500)*/
+	onDoneLoadingJson();
 	}
  
 	$(function() {
