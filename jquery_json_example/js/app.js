@@ -74,10 +74,11 @@ function onDoneLoadingJson() {
 }
 
 
-function openMoreInfo(jsonElement ) {
-  console.log({jsonElement});
+function openMoreInfo(ruleId ) {
+  console.log({jsonElement: ruleId});
   var modal = document.getElementById("myModal");
   modal.style.display = "block";
+  document.getElementById("modalName").innerText = resp[ruleId].name;
   console.log({modal});
   console.table({resp});
 }
