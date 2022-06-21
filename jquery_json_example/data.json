@@ -7,8 +7,8 @@
 	"infoBody" : "This is an explanation...",
 	"exampleBad" : "don't do this...",
 	"exampleGood" : "instead do this...",
-	"references" : ["SOLID Single Responsibility", "https://lmgtfy.app/?q=solid+single+responsibility",
-					"Google", "https://google.com/"]
+	"references" : ["https://lmgtfy.app/?q=solid+single+responsibility", "SOLID Single Responsibility",
+			"https://google.com/", "Google"]
 	},
 	{
 		"name": "A Super naming-ish",
@@ -19,7 +19,7 @@
 		"infoBody" : "This is ALSO an explanation...",
 		"exampleBad" : "really don't do this...",
 		"exampleGood" : "kind of instead do this...",
-		"references" : ["Google", "https://google.com/",
+		"references" : ["https://google.com/", "Google",
 			"", ""]
 	}
 ]

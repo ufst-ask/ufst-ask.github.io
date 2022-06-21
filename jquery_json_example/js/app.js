@@ -78,7 +78,14 @@ function openMoreInfo(ruleId ) {
   console.log({jsonElement: ruleId});
   var modal = document.getElementById("myModal");
   modal.style.display = "block";
-  document.getElementById("modalName").innerText = resp[ruleId].name;
+  document.getElementById("modalName").innerText = rulesData[ruleId].name;
+  document.getElementById("modalInfoBody").innerText = rulesData[ruleId].infoBody;
+  document.getElementById("modalExampleBad").innerText = rulesData[ruleId].exampleBad;
+  document.getElementById("modalExampleGood").innerText = rulesData[ruleId].exampleGood;
+  document.getElementById("modalReferences1").innerHTML =
+       '<a href=' + rulesData[ruleId].references[0] + '>' + rulesData[ruleId].references[1] + '</a>';
+  document.getElementById("modalReferences2").innerHTML =
+      '<a href=' + rulesData[ruleId].references[2] + '>' + rulesData[ruleId].references[3] + '</a>';
   console.log({modal});
-  console.table({resp});
+  console.table({resp: rulesData});
 }
