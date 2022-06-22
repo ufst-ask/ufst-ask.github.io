@@ -11,8 +11,9 @@ function devLoad() {
 		"\t\"exampleBad\" : \"don't do this...\",\n" +
 		"\t\"exampleGood\" : \"instead do this...\",\n" +
 		"\t\"references\" : [\"https://lmgtfy.app/?q=solid+single+responsibility\", \"SOLID Single Responsibility\",\n" +
-		"\t\t\t\"https://google.com/\", \"Google\"]\n" +
-		"\t},\n" +
+		"\t\t\t\"https://google.com/\", \"Google\"],\n" +
+		"\t\"essentialRule\" : \"isEssential\"\n" +
+		"},\n" +
 		"\t{\n" +
 		"\t\t\"name\": \"A Super naming-ish\",\n" +
 		"\t\t\"tags\": [\"naming, \", \"classes, \", \"\", \"\", \"\"],\n" +
@@ -23,7 +24,8 @@ function devLoad() {
 		"\t\t\"exampleBad\" : \"really don't do this...\",\n" +
 		"\t\t\"exampleGood\" : \"kind of instead do this...\",\n" +
 		"\t\t\"references\" : [\"https://google.com/\", \"Google\",\n" +
-		"\t\t\t\"\", \"\"]\n" +
+		"\t\t\t\"\", \"\"],\n" +
+		"\t\t\"essentialRule\" : \"notEssential\"\n" +
 		"\t}\n" +
 		"]"
 	rulesData = JSON.parse(txt);
@@ -46,11 +48,11 @@ function devLoad() {
 			// document.body.appendChild(btn);
 
 			// creating new table row element
-			var tr = $('<tr>')
+			var tr = $('<tr name = ' + rulesData[k].essentialRule + '>')
+			// var tr = $('<tr name = "notEssential">')
 			// first column data
 			tr.append('<td class="py-1 px-2 text-center">' + (i++) + '</td>')
 			// second column data
-
 			tr.append('<td class="py-1 px-2"> <button id="BtnMoreInfo23" class="button" onclick = "openMoreInfo('+k+')">' + rulesData[k].name + '</button></td>')
 			// third column data
 			tr.append('<td class="py-1 px-2">' + rulesData[k].tags[0] + rulesData[k].tags[1] + rulesData[k].tags[2] + rulesData[k].tags[3] + rulesData[k].tags[4] + '</td>')
@@ -73,9 +75,9 @@ function devLoad() {
 }
 
 function load_data() {
-	devLoad();
+	// devLoad();
 	    // Show loader
-	    /*$('#loader').removeClass('d-none')
+	    $('#loader').removeClass('d-none')
 	        // Selecting the table Element
 	    var table = $('#table-list')
 	        // Emptying the Table items
@@ -126,7 +128,7 @@ function load_data() {
 	                $('#loader').addClass('d-none')
 	            }
 	        })
-	    }, 500)*/
+	    }, 500)
 	onDoneLoadingJson();
 	}
  

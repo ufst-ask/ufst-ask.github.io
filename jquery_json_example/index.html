@@ -19,12 +19,11 @@
 	</head>
 
 	<body class="bg-light">
-
-<!--	<td><button id="BtnMoreInfo" class="button">Pronouncable naming</button></td>-->
-
 	    <div class="container py-3" id="page-container">
 	        <h3><b>Uffi</b></h3>
 			<p1>Simple checklist tool to aid in code reviewing based on agreed upon rules.</p1>
+			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='document.getElementById("table-list").classList.toggle("hidePriority")'>Show/hide priority columns</button>
+			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='document.getElementById("table-list").classList.toggle("essentialRule")'>Show/hide less important rules</button>
 	        <hr>
 	        <div id="printables">
 	            <div class="to_print" id="first_element">

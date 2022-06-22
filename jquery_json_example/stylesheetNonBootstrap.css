@@ -22,19 +22,19 @@ td, th {
   font-weight: bold;
 }
 
-#table-list.hidePriority th:nth-child(4),
-#table-list.hidePriority th:nth-child(5){
+#table-list.hidePriority th:nth-child(5),
+#table-list.hidePriority th:nth-child(6){
   display: none;
 }
 
-#table-list.hidePriority td:nth-child(4),
-#table-list.hidePriority td:nth-child(5){
+#table-list.hidePriority td:nth-child(5),
+#table-list.hidePriority td:nth-child(6){
   display:none;
 }
 
 
 
-#table-list.hideLessImportant tr[name="lessImportant"]
+#table-list.essentialRule tr[name="notEssential"]
 {
   display: none;
 }

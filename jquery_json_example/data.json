@@ -1,5 +1,5 @@
 [{
-	"name": "Pronouncable naming",
+	"name": "Pronouncable naming now online",
 	"tags": ["naming, ", "classes, ", "variables, ", "functions", ""],
 	"status": 0,
 	"workload": 2,
@@ -8,8 +8,9 @@
 	"exampleBad" : "don't do this...",
 	"exampleGood" : "instead do this...",
 	"references" : ["https://lmgtfy.app/?q=solid+single+responsibility", "SOLID Single Responsibility",
-			"https://google.com/", "Google"]
-	},
+			"https://google.com/", "Google"],
+	"essentialRule" : "isEssential"
+},
 	{
 		"name": "A Super naming-ish",
 		"tags": ["naming, ", "classes, ", "", "", ""],
@@ -20,6 +21,7 @@
 		"exampleBad" : "really don't do this...",
 		"exampleGood" : "kind of instead do this...",
 		"references" : ["https://google.com/", "Google",
-			"", ""]
+			"", ""],
+		"essentialRule" : "notEssential"
 	}
 ]
