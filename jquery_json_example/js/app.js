@@ -42,7 +42,7 @@ function lessImportantVisible() {
 });
 }
 
-function onDoneLoadingJson() {
+function onDoneCreatingTable() {
   // Get the modal
   var modal = document.getElementById("myModal");
 
