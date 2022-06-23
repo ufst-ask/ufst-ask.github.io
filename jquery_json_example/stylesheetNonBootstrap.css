@@ -34,9 +34,16 @@ td, th {
 
 
 
-#table-list.essentialRule tr[name="notEssential"]
+#table-list.essentialRule tr[name*="notEssential"]
 {
   display: none;
+  /*  background-color: #ffff00;*/
+}
+#table-list.ruleTags tr[name*="SOLID"]
+{
+    display: none;
+    /*console.log("ruleTags");*/
+    /*  background-color: #ffff00;*/
 }
 
 

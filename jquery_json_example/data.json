@@ -1,6 +1,6 @@
 [{
 	"name": "Pronouncable naming now online",
-	"tags": ["naming, ", "classes, ", "variables, ", "functions", ""],
+	"tags": ["naming", "classes", "variables", "functions", ""],
 	"status": 0,
 	"workload": 2,
 	"importance": 3,
@@ -13,7 +13,33 @@
 },
 	{
 		"name": "A Super naming-ish",
-		"tags": ["naming, ", "classes, ", "", "", ""],
+		"tags": ["naming", "classes", "SOLID", "", ""],
+		"status": 0,
+		"workload": 1,
+		"importance": 5,
+		"infoBody" : "This is ALSO an explanation...",
+		"exampleBad" : "really don't do this...",
+		"exampleGood" : "kind of instead do this...",
+		"references" : ["https://google.com/", "Google",
+			"", ""],
+		"essentialRule" : "notEssential"
+	},
+	{
+		"name": "A Super naming-ish",
+		"tags": ["naming", "", "SOLID", "", ""],
+		"status": 0,
+		"workload": 1,
+		"importance": 5,
+		"infoBody" : "This is ALSO an explanation...",
+		"exampleBad" : "really don't do this...",
+		"exampleGood" : "kind of instead do this...",
+		"references" : ["https://google.com/", "Google",
+			"", ""],
+		"essentialRule" : "notEssential"
+	},
+	{
+		"name": "A Super naming-ish",
+		"tags": ["naming", "classes", "", "", ""],
 		"status": 0,
 		"workload": 1,
 		"importance": 5,

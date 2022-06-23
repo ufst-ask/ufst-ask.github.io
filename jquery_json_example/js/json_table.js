@@ -3,8 +3,8 @@ var jsonURL = null;
 
 function devLoad() {
 	const txt = "[{\n" +
-		"\t\"name\": \"Pronouncable naming\",\n" +
-		"\t\"tags\": [\"naming, \", \"classes, \", \"variables, \", \"functions\", \"\"],\n" +
+		"\t\"name\": \"Pronouncable naming now online\",\n" +
+		"\t\"tags\": [\"naming\", \"classes\", \"variables\", \"functions\", \"\"],\n" +
 		"\t\"status\": 0,\n" +
 		"\t\"workload\": 2,\n" +
 		"\t\"importance\": 3,\n" +
@@ -17,7 +17,33 @@ function devLoad() {
 		"},\n" +
 		"\t{\n" +
 		"\t\t\"name\": \"A Super naming-ish\",\n" +
-		"\t\t\"tags\": [\"naming, \", \"classes, \", \"\", \"\", \"\"],\n" +
+		"\t\t\"tags\": [\"naming\", \"classes\", \"SOLID\", \"\", \"\"],\n" +
+		"\t\t\"status\": 0,\n" +
+		"\t\t\"workload\": 1,\n" +
+		"\t\t\"importance\": 5,\n" +
+		"\t\t\"infoBody\" : \"This is ALSO an explanation...\",\n" +
+		"\t\t\"exampleBad\" : \"really don't do this...\",\n" +
+		"\t\t\"exampleGood\" : \"kind of instead do this...\",\n" +
+		"\t\t\"references\" : [\"https://google.com/\", \"Google\",\n" +
+		"\t\t\t\"\", \"\"],\n" +
+		"\t\t\"essentialRule\" : \"notEssential\"\n" +
+		"\t},\n" +
+		"\t{\n" +
+		"\t\t\"name\": \"A Super naming-ish\",\n" +
+		"\t\t\"tags\": [\"naming\", \"\", \"SOLID\", \"\", \"\"],\n" +
+		"\t\t\"status\": 0,\n" +
+		"\t\t\"workload\": 1,\n" +
+		"\t\t\"importance\": 5,\n" +
+		"\t\t\"infoBody\" : \"This is ALSO an explanation...\",\n" +
+		"\t\t\"exampleBad\" : \"really don't do this...\",\n" +
+		"\t\t\"exampleGood\" : \"kind of instead do this...\",\n" +
+		"\t\t\"references\" : [\"https://google.com/\", \"Google\",\n" +
+		"\t\t\t\"\", \"\"],\n" +
+		"\t\t\"essentialRule\" : \"notEssential\"\n" +
+		"\t},\n" +
+		"\t{\n" +
+		"\t\t\"name\": \"A Super naming-ish\",\n" +
+		"\t\t\"tags\": [\"naming\", \"classes\", \"\", \"\", \"\"],\n" +
 		"\t\t\"status\": 0,\n" +
 		"\t\t\"workload\": 1,\n" +
 		"\t\t\"importance\": 5,\n" +
@@ -50,14 +76,17 @@ function createTableFromData() {
 			// document.body.appendChild(btn);
 
 			// creating new table row element
-			var tr = $('<tr name = ' + rulesData[k].essentialRule + '>')
+			var tr = $('<tr id = "ruleRow" class = "' + rulesData[k].essentialRule + ' ' +
+				// ' class = "' +
+				rulesData[k].tags[0] + ' ' + rulesData[k].tags[1] + ' ' + rulesData[k].tags[2] + ' ' + rulesData[k].tags[3] + ' ' + rulesData[k].tags[4] + '">')
 			// var tr = $('<tr name = "notEssential">')
 			// first column data
 			tr.append('<td class="py-1 px-2 text-center">' + (i++) + '</td>')
 			// second column data
 			tr.append('<td class="py-1 px-2"> <button id="BtnMoreInfo" class="button" onclick = "openMoreInfo('+k+')">' + rulesData[k].name + '</button></td>')
 			// third column data
-			tr.append('<td class="py-1 px-2">' + rulesData[k].tags[0] + rulesData[k].tags[1] + rulesData[k].tags[2] + rulesData[k].tags[3] + rulesData[k].tags[4] + '</td>')
+			tr.append('<td class="py-1 px-2">' + //ToDo get this string of tags from function with for-loop
+				rulesData[k].tags[0] + ', ' + rulesData[k].tags[1] + ', ' + rulesData[k].tags[2] + ', ' + rulesData[k].tags[3] + ', ' + rulesData[k].tags[4] + '</td>')
 			// fourth column data
 			tr.append('<td class="py-1 px-2"> <input type="range" id="status" name="status" min="0" max="2" value="0"> </td>')
 			// fifth column data
@@ -65,6 +94,7 @@ function createTableFromData() {
 			// sixth column data
 			tr.append('<td class="py-1 px-2">' + rulesData[k].importance  + '</td>')
 
+			console.log({tr});
 			// Append table row item to table body
 			table.find('tbody').append(tr)
 		})

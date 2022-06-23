@@ -33,12 +33,29 @@ function sortTable(columnToSort) {
   }
 }
 
+function lessImportantVisible() {
+	var myBox = document.querySelector("#rulesTable").addEventListener("click", function() {
+
+  this.classList.toggle('bg-red');
+});
+}
+
 function onDoneCreatingTable() {
   // Get the modal
   var modal = document.getElementById("myModal");
 
+// Get the button that opens the modal
+  var btn = document.getElementById("BtnMoreInfo23");
+
 // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+  /*btn.onclick = function openMoreInfo(jsonElement ) {
+    console.log({jsonElement});
+    console.log({modal});
+    modal.style.display = "block";
+  }*/
 
 // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
@@ -69,4 +86,30 @@ function openMoreInfo(ruleId ) {
       '<a href=' + rulesData[ruleId].references[2] + '>' + rulesData[ruleId].references[3] + '</a>';
   console.log({modal});
   console.table({resp: rulesData});
+}
+
+
+function displayByTag(tag) {
+  console.log({tag});
+   var tableRows = document.getElementsByTagName("tr");
+  console.log({tableRows});
+   for (i = 1; i < (tableRows.length); i++) {
+     if(tableRows[i].classList.contains(tag)) {
+       console.log("it's here: " + i.toString() );
+       tableRows[i].style.visibility = "visible";
+     }
+   }
+}
+
+function resetToEssential(tag) {
+  console.log({tag});
+  var tableRows = document.getElementsByTagName("tr");
+  console.log({tableRows});
+  for (i = 1; i < (tableRows.length); i++) {
+    if(tableRows[i].classList.contains(tag)) {
+      tableRows[i].style.visibility = "visible";
+    } else {
+      tableRows[i].style.visibility = "hidden";
+    }
+  }
 }
