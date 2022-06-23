@@ -95,10 +95,10 @@ function displayByTag(tag) {
   console.log({tableRows});
    for (i = 1; i < (tableRows.length); i++) {
      if(tableRows[i].classList.contains(tag)) {
-       console.log("it's here: " + i.toString() );
        tableRows[i].style.visibility = "visible";
      }
    }
+  sortTableByVisibility();
 }
 
 function resetToEssential(tag) {
@@ -110,6 +110,8 @@ function resetToEssential(tag) {
       tableRows[i].style.visibility = "visible";
     } else {
       tableRows[i].style.visibility = "hidden";
+      tableRows[i].style.visibility = "collapse";
     }
   }
+  sortTableByVisibility();
 }
