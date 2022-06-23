@@ -55,7 +55,7 @@ function createTableFromData() {
 			// first column data
 			tr.append('<td class="py-1 px-2 text-center">' + (i++) + '</td>')
 			// second column data
-			tr.append('<td class="py-1 px-2"> <button id="BtnMoreInfo23" class="button" onclick = "openMoreInfo('+k+')">' + rulesData[k].name + '</button></td>')
+			tr.append('<td class="py-1 px-2"> <button id="BtnMoreInfo" class="button" onclick = "openMoreInfo('+k+')">' + rulesData[k].name + '</button></td>')
 			// third column data
 			tr.append('<td class="py-1 px-2">' + rulesData[k].tags[0] + rulesData[k].tags[1] + rulesData[k].tags[2] + rulesData[k].tags[3] + rulesData[k].tags[4] + '</td>')
 			// fourth column data
@@ -78,7 +78,7 @@ function createTableFromData() {
 }
 
 function load_data() {
-	loadMode = "repo";
+	loadMode = " ";
 
 	switch(loadMode) {
 		case "repo":
