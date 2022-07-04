@@ -21,15 +21,24 @@
 	<body class="bg-light">
 	    <div class="container py-3" id="page-container">
 	        <h3><b>Uffi</b></h3>
-			<p1>Simple checklist tool to aid in code reviewing based on agreed upon rules.</p1>
+			<p1>A checklist tool to aid in code reviewing based on agreed upon rules.</p1>
+			<br>
+			<p1>Code examples serves to illustrate a point. Naming and such may differ from the actual code in the project.</p1>
 			<br>
 			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='document.getElementById("table-list").classList.toggle("hidePriority")'>Show/hide priority columns</button>
-			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='document.getElementById("table-list").classList.toggle("essentialRule")'>Show/hide less important rules</button>
+<!--			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='document.getElementById("table-list").classList.toggle("essentialRule")'>Show/hide less important rules</button>-->
 			<br>
 			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='resetToEssential("isEssential")'>Reset</button>
 			<br>
+			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("notEssential")'>All</button>
 			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("SOLID")'>SOLID</button>
-			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("classes")'>classes</button>
+			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Naming")'>Naming</button>
+			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Functions")'>Functions</button>
+			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Variables")'>Variables</button>
+			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Tests")'>Tests</button>
+			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Other")'>Other</button>
+			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("code_review_document")'>code_review_document</button>
+			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Precondition")'>Precondition</button>
 
 
 	        <hr>

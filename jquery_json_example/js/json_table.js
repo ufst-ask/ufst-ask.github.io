@@ -108,15 +108,19 @@ function createTableFromData() {
 }
 
 function load_data() {
-	loadMode = " ";
+	loadMode = "sharepoint";
 
 	switch(loadMode) {
 		case "repo":
 			jsonURL = 'data.json';
 			loadDataFromJson();
 			break;
-		case "confluence":
-			jsonURL = 'https://api.media.atlassian.com/file/926cfd6f-3d8b-4fc3-b978-dd9b647413e0/binary?token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiNTIwNWZiZi0xY2NmLTQ0ZDctOWM3My04ZWViNTkzNGNkNDMiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOjkyNmNmZDZmLTNkOGItNGZjMy1iOTc4LWRkOWI2NDc0MTNlMCI6WyJyZWFkIl19LCJleHAiOjE2NTU5NzExODAsIm5iZiI6MTY1NTg4ODI2MH0.njyRGSOzhxP-Hc2QGXIiyjaBGMBTmmnqIWUryCXh9ME&client=b5205fbf-1ccf-44d7-9c73-8eeb5934cd43&name=cleanCodeOfflineVersion.json';
+		case "local":
+			jsonURL = 'C:\\dev\\other\\random\\cleanCodeOfflineVersion.json'; //Not allowed
+			loadDataFromJson();
+			break;
+		case "sharepoint":
+			jsonURL = 'https://skat-my.sharepoint.com/personal/aske_soenderby_knudsen_ufst_dk/_layouts/15/download.aspx?UniqueId=0b81ac392cb647f4bbc26ab6c25135c3&e=uZQz9U';
 			loadDataFromJson();
 			break;
 		default:

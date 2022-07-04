@@ -68,7 +68,7 @@ function onDoneCreatingTable() {
       modal.style.display = "none";
     }
   }
-
+resetToEssential("isEssential");
 }
 
 
@@ -113,5 +113,4 @@ function resetToEssential(tag) {
       tableRows[i].style.visibility = "collapse";
     }
   }
-  sortTableByVisibility();
 }
