@@ -21,16 +21,19 @@
 	<body class="bg-light">
 	    <div class="container py-3" id="page-container">
 	        <h3><b>Uffi</b></h3>
-			<p1>A checklist tool to aid in code reviewing based on agreed upon rules.</p1>
+			<p1>A checklist and learning tool to aid in code reviewing based on agreed upon rules.<br>
+			Any rule can be expanded in order to learn more about it.</p1>
 			<br>
 			<p1>Code examples serves to illustrate a point. Naming and such may differ from the actual code in the project.</p1>
 			<br>
 			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='document.getElementById("table-list").classList.toggle("hidePriority")'>Show/hide priority columns</button>
 <!--			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='document.getElementById("table-list").classList.toggle("essentialRule")'>Show/hide less important rules</button>-->
 			<br>
-			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='resetToEssential("isEssential")'>Reset</button>
+			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='resetToEssential("isEssential")'>Reset to essentials</button>
 			<br>
+			<pr> Display </pr>
 			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("notEssential")'>All</button>
+			<pr> or display rules with tag: </pr>
 			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("SOLID")'>SOLID</button>
 			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Naming")'>Naming</button>
 			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Functions")'>Functions</button>
@@ -48,10 +51,9 @@
 	                <table class="table table-bordered table-striped" id="table-list">
 	                    <thead>
 	                        <tr class="bg-primary bg-gradient text-white">
-	                            <th class="text-capitalize text-center py-1 px-2">
-									<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(0)">ID</button></th>
-	                            <th class="text-capitalize text-center py-1 px-2">
-									<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(1)">Name</button></th>
+	                            <th class="text-capitalize text-center py-1 px-2">ID</th>
+	                            <th class="text-capitalize text-center py-1 px-2">Name</th>
+<!--									<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(1)">Name</button></th> //Doesn't sort properly yet-->
 	                            <th class="text-capitalize text-center py-1 px-2">
 									<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(2)">Tags</button></th>
 	                            <th class="text-capitalize text-center py-1 px-2">Skip, No, Yes</th>
@@ -87,20 +89,12 @@
 
 			<p style="font-weight:bold">Example</p>
 			<p style="font-family:consolas">
-			//Bad
-			<p id = "modalExampleBad"></p>
-				<br>
-				<br>
-				//Good
-				<br>
-			<br>
-				<p id = "modalExampleGood"></p>
+			<pre>
+<b>//Bad</b><p id = "modalExampleBad"></p>
+<b>//Good</b><p id = "modalExampleGood"></p>
 			</p>
-
-			<br>
-			<br>
-			<a id = "modalReferences1" href = "URL"></a>
-			<a id = "modalReferences2" href = "URL"></a>
+			</pre>
+			<div id = modalReferences></div>
 		</div>
 	</div>
 
