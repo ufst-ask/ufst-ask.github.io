@@ -82,8 +82,8 @@ function load_data() {
 	}
 }
 
-function load_data_custom(customURL) {
-	jsonURL = customURL;
+function load_data_userDefined() {
+	jsonURL = document.getElementById("userDefinedJsonURL").value;
 	loadDataFromJson();
 }
 

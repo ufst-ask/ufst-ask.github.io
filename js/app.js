@@ -1,4 +1,4 @@
-var devMode = false;
+var devMode = true;
 
 function sortTable(columnToSort) {
   var table, rows, switching, i, x, y, shouldSwitch;
