@@ -84,6 +84,7 @@ function load_data() {
 
 function load_data_userDefined() {
 	jsonURL = document.getElementById("userDefinedJsonURL").value;
+	console.log("loaded json: " + jsonURL);
 	loadDataFromJson();
 }
 
@@ -127,7 +128,6 @@ function loadDataFromJson() {
 	        // Reload Button Function
 	    $('#reload_data').click(function() {
 	        // refreshing the table data
-			console.log("Testing custom load");
-			load_data_custom("rules_default_SOLID.json")
+			load_data()
 	    })
 	})

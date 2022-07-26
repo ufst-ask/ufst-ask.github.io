@@ -68,11 +68,11 @@
 	},
 	{
 		"name": "Dependency inversion principle",
-		"tags": ["SOLID", ""],
+		"tags": ["SOLID"],
 		"status": 0,
 		"workload": 5,
 		"importance": 4,
-		"infoBody" : "",
+		"infoBody" : "'In software engineering, dependency injection is a design pattern in which an object or function receives other objects or functions that it depends on' - Wiki",
 		"exampleBad" : "",
 		"exampleGood" : "",
 		"references" : ["https://stackify.com/dependency-inversion-principle/", "Dependency Inversion Principle with Code Examples",
