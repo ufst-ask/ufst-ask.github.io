@@ -67,7 +67,7 @@ function createTableFromData() {
 function load_data() {
 	loadMode = "default";
 	if(devMode) {
-		loadMode = "repo";
+		loadMode = "inddrivelsesprogrammet";
 	}
 
 	switch(loadMode) {
@@ -80,7 +80,12 @@ function load_data() {
 			loadDataFromJson();
 			break;
 	}
-	}
+}
+
+function load_data_custom(customURL) {
+	jsonURL = customURL;
+	loadDataFromJson();
+}
 
 function loadDataFromJson() {
 	// Show loader
@@ -122,6 +127,7 @@ function loadDataFromJson() {
 	        // Reload Button Function
 	    $('#reload_data').click(function() {
 	        // refreshing the table data
-	        load_data()
+			console.log("Testing custom load");
+			load_data_custom("rules_default_SOLID.json")
 	    })
 	})
