@@ -43,8 +43,8 @@
 			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("code_review_document")'>code_review_document</button>
 			<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Precondition")'>Precondition</button>
 			<br>
-			URL for custom JSON file: <input type ="text" id="userDefinedJsonURL"> <button class="btn btn-sm btn-success rounded-0 my-2" onclick = "load_data_userDefined()" >Load</button>
-
+			URL for custom JSON file: <input type ="text" id="userDefinedJsonURL"> <button class="btn btn-sm btn-success rounded-0 my-2" onclick = "load_data_userDefined()" >Load custom</button>
+			<button type="button" class="btn btn-sm btn-success rounded-0 my-2" id="reload_data">Load default</button>
 	        <hr>
 	        <div id="printables">
 	            <div class="to_print" id="first_element">
@@ -52,9 +52,11 @@
 	                <table class="table table-bordered table-striped" id="table-list">
 	                    <thead>
 	                        <tr class="bg-primary bg-gradient text-white">
-	                            <th class="text-capitalize text-center py-1 px-2">ID</th>
-	                            <th class="text-capitalize text-center py-1 px-2">Name</th>
-<!--									<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(1)">Name</button></th> //Doesn't sort properly yet-->
+<!--	                            <th class="text-capitalize text-center py-1 px-2">ID</th>-->
+								<th class="text-capitalize text-center py-1 px-2">
+									<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(0)">ID</button></th>
+	                        	<th class="text-capitalize text-center py-1 px-2">
+									<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(1)">Name</button></th>
 	                            <th class="text-capitalize text-center py-1 px-2">
 									<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(2)">Tags</button></th>
 	                            <th class="text-capitalize text-center py-1 px-2">Skip, No, Yes</th>
@@ -75,7 +77,6 @@
 	            </div>
 	        </div>
 	        <hr>
-	        <center><button type="button" class="btn btn-sm btn-success rounded-0 my-2" id="reload_data">Reload Data</button></center>
 	    </div>
 
 	<!-- The Modal -->

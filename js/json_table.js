@@ -32,7 +32,7 @@ function createTableFromData() {
 			tr.append('<td class="py-1 px-2 text-center">' + (i++) + '</td>')
 
 			// second column data
-			tr.append('<td class="py-1 px-2"> <button id="BtnMoreInfo" class="button" onclick = "openMoreInfo('+k+')">' + rulesData[k].name + '</button></td>')
+			tr.append('<td class="py-1 px-2" id =' + rulesData[k].name + '> <button id="BtnMoreInfo" class="button" onclick = "openMoreInfo('+k+')">' + rulesData[k].name + '</button></td>')
 
 			// third column data
 			var tagsString = "";

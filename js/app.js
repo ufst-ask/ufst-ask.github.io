@@ -19,11 +19,35 @@ function sortTable(columnToSort) {
       one from current row and one from the next:*/
       x = rows[i].getElementsByTagName("TD")[columnToSort];
       y = rows[i + 1].getElementsByTagName("TD")[columnToSort];
+
       //check if the two rows should switch place:
-      if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-        //if so, mark as a switch and break the loop:
-        shouldSwitch = true;
-        break;
+      if(columnToSort == 0) { //Name
+        let xNumber = parseInt(x.innerHTML.toLowerCase());
+        let yNumber = parseInt(y.innerHTML.toLowerCase());
+        if (xNumber > yNumber) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      } else if(columnToSort == 1) { //Workload and Importance
+
+        if (x.id.toLowerCase() > y.id.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      } else if(columnToSort == 4 || columnToSort == 5) { //Workload and Importance
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }  else {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) { //Tags
+          //if so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
       }
     }
     if (shouldSwitch) {
@@ -111,6 +135,7 @@ function addReferences(ruleId ) {
 
 function displayByTag(tag) {
   console.log({tag});
+  hideAll();
    var tableRows = document.getElementsByTagName("tr");
   console.log({tableRows});
    for (i = 1; i < (tableRows.length); i++) {
@@ -132,5 +157,14 @@ function resetToEssential(tag) {
       tableRows[i].style.visibility = "hidden";
       tableRows[i].style.visibility = "collapse";
     }
+  }
+}
+
+function hideAll() {
+  var tableRows = document.getElementsByTagName("tr");
+  console.log({tableRows});
+  for (i = 1; i < (tableRows.length); i++) {
+      tableRows[i].style.visibility = "hidden";
+      tableRows[i].style.visibility = "collapse";
   }
 }
