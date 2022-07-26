@@ -2,59 +2,7 @@ var rulesData = null;
 var jsonURL = null;
 
 function devLoad() {
-	const txt = "[{\n" +
-		"\t\"name\": \"Pronouncable naming now online\",\n" +
-		"\t\"tags\": [\"naming\", \"classes\", \"variables\", \"functions\", \"\"],\n" +
-		"\t\"status\": 0,\n" +
-		"\t\"workload\": 2,\n" +
-		"\t\"importance\": 3,\n" +
-		"\t\"infoBody\" : \"This is an explanation...\",\n" +
-		"\t\"exampleBad\" : \"don't do this...\",\n" +
-		"\t\"exampleGood\" : \"instead do this...\",\n" +
-		"\t\"references\" : [\"https://lmgtfy.app/?q=solid+single+responsibility\", \"SOLID Single Responsibility\",\n" +
-		"\t\t\t\"https://google.com/\", \"Google\"],\n" +
-		"\t\"essentialRule\" : \"isEssential\"\n" +
-		"},\n" +
-		"\t{\n" +
-		"\t\t\"name\": \"A Super naming-ish\",\n" +
-		"\t\t\"tags\": [\"naming\", \"classes\", \"SOLID\", \"\", \"\"],\n" +
-		"\t\t\"status\": 0,\n" +
-		"\t\t\"workload\": 1,\n" +
-		"\t\t\"importance\": 5,\n" +
-		"\t\t\"infoBody\" : \"This is ALSO an explanation...\",\n" +
-		"\t\t\"exampleBad\" : \"really don't do this...\",\n" +
-		"\t\t\"exampleGood\" : \"kind of instead do this...\",\n" +
-		"\t\t\"references\" : [\"https://google.com/\", \"Google\",\n" +
-		"\t\t\t\"\", \"\"],\n" +
-		"\t\t\"essentialRule\" : \"notEssential\"\n" +
-		"\t},\n" +
-		"\t{\n" +
-		"\t\t\"name\": \"A Super naming-ish\",\n" +
-		"\t\t\"tags\": [\"naming\", \"\", \"SOLID\", \"\", \"\"],\n" +
-		"\t\t\"status\": 0,\n" +
-		"\t\t\"workload\": 1,\n" +
-		"\t\t\"importance\": 5,\n" +
-		"\t\t\"infoBody\" : \"This is ALSO an explanation...\",\n" +
-		"\t\t\"exampleBad\" : \"really don't do this...\",\n" +
-		"\t\t\"exampleGood\" : \"kind of instead do this...\",\n" +
-		"\t\t\"references\" : [\"https://google.com/\", \"Google\",\n" +
-		"\t\t\t\"\", \"\"],\n" +
-		"\t\t\"essentialRule\" : \"notEssential\"\n" +
-		"\t},\n" +
-		"\t{\n" +
-		"\t\t\"name\": \"A Super naming-ish\",\n" +
-		"\t\t\"tags\": [\"naming\", \"classes\", \"\", \"\", \"\"],\n" +
-		"\t\t\"status\": 0,\n" +
-		"\t\t\"workload\": 1,\n" +
-		"\t\t\"importance\": 5,\n" +
-		"\t\t\"infoBody\" : \"This is ALSO an explanation...\",\n" +
-		"\t\t\"exampleBad\" : \"really don't do this...\",\n" +
-		"\t\t\"exampleGood\" : \"kind of instead do this...\",\n" +
-		"\t\t\"references\" : [\"https://google.com/\", \"Google\",\n" +
-		"\t\t\t\"\", \"\"],\n" +
-		"\t\t\"essentialRule\" : \"notEssential\"\n" +
-		"\t}\n" +
-		"]"
+	const txt = ""
 	rulesData = JSON.parse(txt);
 }
 
@@ -117,24 +65,19 @@ function createTableFromData() {
 }
 
 function load_data() {
-	loadMode = "repo";
+	loadMode = "default";
 	if(devMode) {
 		loadMode = "repo";
 	}
 
 	switch(loadMode) {
-		case "repo":
-			jsonURL = 'data.json';
-			loadDataFromJson();
-			break;
-		case "local":
-			jsonURL = 'C:\\dev\\other\\random\\cleanCodeOfflineVersion.json'; //Not allowed
+		case "inddrivelsesprogrammet":
+			jsonURL = 'rules_inddrivelsesprogrammet.json';
 			loadDataFromJson();
 			break;
 		default:
-			devLoad();
-			createTableFromData();
-			onDoneCreatingTable();
+			jsonURL = 'rules_default_SOLID.json';
+			loadDataFromJson();
 			break;
 	}
 	}

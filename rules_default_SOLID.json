@@ -1,0 +1,82 @@
+[
+	{
+		"name": "Single responsibility, FUNCTION",
+		"tags": ["SOLID", "code_review_document"],
+		"status": 0,
+		"workload": 3,
+		"importance": 3,
+		"infoBody" : "If your function name has the word 'and' in it, it probably does more than one thing and should be split up.\nIf you can use IntelliJ extract on it, it probably should be divided into more than one function.\nLastly, you should not need to indent more than twice within a function.",
+		"exampleBad" : "CreateClaimAndRepossessionCaseForClaim() {...}",
+		"exampleGood" : "CreateClaim() {...}\nCreateRepossessionCase(Claim claimToReposes) {...}",
+		"references" : ["https://stackify.com/solid-design-principles/", "SOLID Design Principles Explained: The Single Responsibility Principle",
+			"https://en.wikipedia.org/wiki/Single-responsibility_principle", "Wiki, Single-responsibility principle",
+			"https://play.google.com/books/reader?id=UuBU732z6zgC&pg=GBS.PT117&hl=da", "Clean Code, p. 118 'Blocks and Indenting'"],
+		"essentialRule" : "notEssential"
+	},
+	{
+		"name": "Single responsibility, CLASS",
+		"tags": ["SOLID"],
+		"status": 0,
+		"workload": 4,
+		"importance": 4,
+		"infoBody" : "You should be able to give your class a concise name.\nIt should only have one reason to change.",
+		"exampleBad" : "public class CourtFeeStopAndRecalculationTest {...}",
+		"exampleGood" : "public class CourtFeeStopTest {...}\npublic class CourtFeeRecalculationTest {...}",
+		"references" : ["https://stackify.com/solid-design-principles/", "SOLID Design Principles Explained: The Single Responsibility Principle",
+			"https://en.wikipedia.org/wiki/Single-responsibility_principle", "Single-responsibility principle"],
+		"essentialRule" : "isEssential"
+	},
+	{
+		"name": "Open-closed. Follow open-closed principle",
+		"tags": ["SOLID"],
+		"status": 0,
+		"workload": 5,
+		"importance": 4,
+		"infoBody" : "\"Interface specifications can be reused through inheritance but implementation need not be. The existing interface is closed to modifications and new implementations must, at a minimum, implement that interface.\" - Wiki",
+		"exampleBad" : "",
+		"exampleGood" : "",
+		"references" : ["https://stackify.com/solid-design-open-closed-principle/", "The Open/Closed Principle with Code Examples",
+			"https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle", "Wiki, Open-closed principle"],
+		"essentialRule" : "isEssential"
+	},
+	{
+		"name": "Liskov Substitution Principle",
+		"tags": ["SOLID"],
+		"status": 0,
+		"workload": 5,
+		"importance": 4,
+		"infoBody" : "\"S is a subtype of T, then objects of type T may be replaced with objects of type S\" \nIt's a complex principle and it's recommended to look more into the references.",
+		"exampleBad" : "",
+		"exampleGood" : "",
+		"references" : ["https://stackify.com/solid-design-liskov-substitution-principle/", "The Liskov Substitution Principle with Code Examples",
+			"https://en.wikipedia.org/wiki/Liskov_substitution_principle", "Wiki, Liskov substitution principle",
+		"https://www.youtube.com/watch?v=Mmy1EUKC_iE&ab_channel=edutechional", "YouTube, 5:57, edutechional, Liskov Substitution Principle"],
+		"essentialRule" : "notEssential"
+	},
+	{
+		"name": "Interface segregation principle",
+		"tags": ["SOLID"],
+		"status": 0,
+		"workload": 5,
+		"importance": 4,
+		"infoBody" : "",
+		"exampleBad" : "",
+		"exampleGood" : "",
+		"references" : ["https://stackify.com/interface-segregation-principle/", "Interface Segregation with Code Examples",
+			"https://en.wikipedia.org/wiki/Interface_segregation_principle", "Wiki, Interface segregation principle"],
+		"essentialRule" : "isEssential"
+	},
+	{
+		"name": "Dependency inversion principle",
+		"tags": ["SOLID", ""],
+		"status": 0,
+		"workload": 5,
+		"importance": 4,
+		"infoBody" : "",
+		"exampleBad" : "",
+		"exampleGood" : "",
+		"references" : ["https://stackify.com/dependency-inversion-principle/", "Dependency Inversion Principle with Code Examples",
+			"https://en.wikipedia.org/wiki/Dependency_inversion_principle", "Wiki, Dependency inversion principle"],
+		"essentialRule" : "isEssential"
+	}
+]

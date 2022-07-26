@@ -81,7 +81,9 @@ function openMoreInfo(ruleId ) {
   var modal = document.getElementById("myModal");
   modal.style.display = "block";
   document.getElementById("modalName").innerText = rulesData[ruleId].name;
-  document.getElementById("modalInfoBody").innerText = rulesData[ruleId].infoBody;
+
+  infoText = replaceStandardTextIfRecognised(rulesData[ruleId].infoBody);
+  document.getElementById("modalInfoBody").innerText = infoText;
   document.getElementById("modalExampleBad").innerText = rulesData[ruleId].exampleBad;
   document.getElementById("modalExampleGood").innerText = rulesData[ruleId].exampleGood;
   /*document.getElementById("modalReferences1").innerHTML =
@@ -91,6 +93,11 @@ function openMoreInfo(ruleId ) {
 
   addReferences(ruleId);
 
+}
+
+function replaceStandardTextIfRecognised(text) {
+  text = text.replace("_MoreInfoInBook", "You can read more about this concept in \"The Robert C. Martin Clean Code Collection (Collection)\".\n In order to avoid violating copyrights, this element is not explained but simply referenced.\nFollow the link in references to the book which you can purchase online.\"");
+  return text;
 }
 
 function addReferences(ruleId ) {
