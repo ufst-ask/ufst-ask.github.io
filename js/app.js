@@ -75,7 +75,7 @@ function lessImportantVisible() {
 }
 
 function onDoneCreatingTable() {
-  // Get the modal
+  // Get the modal MORE INFO
   var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
@@ -84,24 +84,32 @@ function onDoneCreatingTable() {
 // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal
-  /*btn.onclick = function openMoreInfo(jsonElement ) {
-    console.log({jsonElement});
-    console.log({modal});
-    modal.style.display = "block";
-  }*/
-
 // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
     modal.style.display = "none";
   }
 
+  // Get the modal RULES LOAD
+  var modalRulesLoad = document.getElementById("modalRulesLoadID");
+
+// Get the <span> element that closes the modal
+  var spanRulesLoad = document.getElementsByClassName("closeRulesLoad")[0];
+
+// When the user clicks on <span> (x), close the modal
+  spanRulesLoad.onclick = function() {
+    modalRulesLoad.style.display = "none";
+  }
+
 // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
+    if (event.target == modalRulesLoad) {
+      modalRulesLoad.style.display = "none";
+    }
     if (event.target == modal) {
       modal.style.display = "none";
     }
   }
+
   if(!devMode) {
     resetToEssential("isEssential");
   }
