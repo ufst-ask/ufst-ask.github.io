@@ -1,4 +1,4 @@
-var devMode = false;
+var devMode = true;
 
 function sortTable(columnToSort) {
   var table, rows, switching, i, x, y, shouldSwitch;
@@ -21,7 +21,7 @@ function sortTable(columnToSort) {
       y = rows[i + 1].getElementsByTagName("TD")[columnToSort];
 
       //check if the two rows should switch place:
-      if(columnToSort == 0) { //Name
+      if(columnToSort == 0) { //ID
         let xNumber = parseInt(x.innerHTML.toLowerCase());
         let yNumber = parseInt(y.innerHTML.toLowerCase());
         if (xNumber > yNumber) {
@@ -29,14 +29,22 @@ function sortTable(columnToSort) {
           shouldSwitch = true;
           break;
         }
-      } else if(columnToSort == 1) { //Workload and Importance
+      } else if(columnToSort == 1) { //Name
 
         if (x.id.toLowerCase() > y.id.toLowerCase()) {
           //if so, mark as a switch and break the loop:
           shouldSwitch = true;
           break;
         }
-      } else if(columnToSort == 4 || columnToSort == 5) { //Workload and Importance
+      } /*else if(columnToSort == 3) { //Status. Doesn't work yet. It doesn't get what the user has set the value to.
+        let xNumber = parseInt(x.innerHTML.toString().slice(70,71));
+        let yNumber = parseInt(y.innerHTML.toString().slice(70,71));
+        if (xNumber > yNumber) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }*/ else if(columnToSort == 4 || columnToSort == 5) { //Workload and Importance
         if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
           //if so, mark as a switch and break the loop:
           shouldSwitch = true;
