@@ -110,7 +110,7 @@ function onDoneCreatingTable() {
       modal.style.display = "none";
     }
   }
-  displayByTag("notEssential");
+  displayByTag("ALL");
   if(!devMode) {
     // resetToEssential("notEssential");
   }
