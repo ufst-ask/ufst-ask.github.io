@@ -60,7 +60,7 @@ function createTableFromData() {
 			// third column data
 			var tagsString = "";
 			for (let i = 0; i < rulesData[k].tags.length; i++) {
-				tagsString += rulesData[k].tags[i];
+				tagsString += rulesData[k].tags[i].replaceAll("_"," ");
 				if(i < (rulesData[k].tags.length-1) ) {
 					tagsString += ", ";
 				}

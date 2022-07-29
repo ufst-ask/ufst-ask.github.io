@@ -29,43 +29,48 @@
 
 	<hr>
 
-	<pr> Display </pr>
-	<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("notEssential")'>All</button> ,
-	<button class="btn btn-sm btn-success rounded-0 my-2" onclick='resetToEssential("isEssential")'>Essential rules</button>
-	<pr> or display rules with tag: </pr> <br>
-	<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("SOLID")'>SOLID</button>
-	<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Naming")'>Naming</button>
-	<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Functions")'>Functions</button>
-	<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Variables")'>Variables</button>
-	<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Tests")'>Tests</button>
-	<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Other")'>Other</button>
-	<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("code_review_document")'>code_review_document</button>
-	<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Precondition")'>Precondition</button>
+	<h5> Display by tag</h5>
+	<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Clean_Code_Official")'><b>Clean Code Official</b></button>
+	<button class="btn btn-sm btn-primary rounded-0 my-2" onclick='displayByTag("Code_Review_Official")'><b>Code Review Official</b></button>
+	<button class="btn btn-sm btn-default rounded-0 my-2" onclick='displayByTag("notEssential")'><b>Display all</b></button>
 	<br>
-	<button class="btn btn-sm btn-success rounded-0 my-2" onclick='document.getElementById("table-list").classList.toggle("hidePriority")'>Show/hide priority columns</button>
-	<br> <br>
-	<b>Rules displayed: <p1 id = "rulesDisplayed"></p1> </b>
+	<br>
+<!--	<button class="btn btn-sm btn-default rounded-0 my-2" onclick='displayByTag("notEssential")'>All</button> ,-->
+<!--	<button class="btn btn-sm btn-default rounded-0 my-2" onclick='resetToEssential("isEssential")'>Essential rules</button>-->
+	Supplementary rules by type.
+	<br>Contains more examples and references to learn from.<br>
+	<button class="btn btn-sm btn-warning rounded-0 my-2" onclick='displayByTag("SOLID")'><b>SOLID</b></button>
+	<button class="btn btn-sm btn-warning rounded-0 my-2" onclick='displayByTag("Naming")'><b>Naming</b></button>
+	<button class="btn btn-sm btn-warning rounded-0 my-2" onclick='displayByTag("Functions")'><b>Functions</b></button>
+	<button class="btn btn-sm btn-warning rounded-0 my-2" onclick='displayByTag("Variables")'><b>Variables</b></button>
+	<button class="btn btn-sm btn-warning rounded-0 my-2" onclick='displayByTag("Tests")'><b>Tests</b></button>
+	<button class="btn btn-sm btn-warning rounded-0 my-2" onclick='displayByTag("Other")'><b>Other</b></button>
+	<button class="btn btn-sm btn-warning rounded-0 my-2" onclick='displayAllAdditionalTags()'><b>All additional rules</b></button>
+	<br>
+	<button class="btn btn-sm btn-default rounded-0 my-2" onclick='document.getElementById("table-list").classList.toggle("hidePriority")'><b>Show/hide priority columns</b></button>
+	<br>
+	Rules displayed: <p1 id = "rulesDisplayed"></p1>
 
 	<div id="printables">
 		<div class="to_print" id="first_element">
 			<hr>
 			<table class="table table-bordered table-striped" id="table-list">
 				<thead>
-				<tr class="bg-primary bg-gradient text-white">
+				<tr class="bg-default bg-gradient">
 					<!--	                            <th class="text-capitalize text-center py-1 px-2">ID</th>-->
 					<th class="text-capitalize text-center py-1 px-2">
-						<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(0)">ID</button></th>
+						<button class="btn btn-sm btn-default rounded-0 my-2" onclick="sortTable(0)"><b>ID</b></button></th>
 					<th class="text-capitalize text-center py-1 px-2">
-						<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(1)">Name</button></th>
+						<button class="btn btn-sm btn-default rounded-0 my-2" onclick="sortTable(1)"><b>Name</b></button></th>
 					<th class="text-capitalize text-center py-1 px-2">
-						<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(2)">Tags</button></th>
+						<button class="btn btn-sm btn-default rounded-0 my-2" onclick="sortTable(2)"><b>Tags</b></button></th>
+<!--					<th class="text-capitalize text-center py-1 px-2">-->
+<!--						<button class="btn btn-sm btn-default rounded-0 my-2" onclick="sortTable(3)">Skip, No, Yes</button></th>-->
+						                            <th class="text-capitalize text-center py-1 px-2"><i>Skip, No, Yes</i></th>
 					<th class="text-capitalize text-center py-1 px-2">
-						<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(3)">Skip, No, Yes</button></th>
-					<!--	                            <th class="text-capitalize text-center py-1 px-2">Skip, No, Yes</th>-->
+						<button class="btn btn-sm btn-default rounded-0 my-2" onclick="sortTable(4)"><b>Workload</b></button></th>
 					<th class="text-capitalize text-center py-1 px-2">
-						<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(4)">Workload</button></th>
-					<th class="text-capitalize text-center py-1 px-2">
-						<button class="btn btn-sm btn-success rounded-0 my-2" onclick="sortTable(5)">Importance</button></th>
+						<button class="btn btn-sm btn-default rounded-0 my-2" onclick="sortTable(5)"><b>Importance</b></button></th>
 				</tr>
 				</thead>
 				<tbody>
@@ -110,13 +115,13 @@
 		<span class="closeRulesLoad">&times;</span>
 		<b>Load custom rules</b>
 		<br>
-		URL: <input type ="text" id="userDefinedJsonURL"> <button class="btn btn-sm btn-success rounded-0 my-2" onclick = "load_data_userDefined()" >Load URL</button>
+		URL: <input type ="text" id="userDefinedJsonURL"> <button class="btn btn-sm btn-default rounded-0 my-2" onclick = "load_data_userDefined()" >Load URL</button>
 		<br>
 		<form id="upload">
 			<input type="file" id="file" accept=".json">
-			<button class="btn btn-sm btn-success rounded-0 my-2" onclick = "loadUserDefinedJSON()" >Load file</button>
+			<button class="btn btn-sm btn-default rounded-0 my-2" onclick = "loadUserDefinedJSON()" >Load file</button>
 		</form>
-		<button type="button" class="btn btn-sm btn-success rounded-0 my-2" id="reload_data">Load default</button>
+		<button type="button" class="btn btn-sm btn-default rounded-0 my-2" id="reload_data">Load default</button>
 	</div>
 </div>
 

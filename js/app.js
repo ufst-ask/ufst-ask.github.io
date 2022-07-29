@@ -110,9 +110,9 @@ function onDoneCreatingTable() {
       modal.style.display = "none";
     }
   }
-
+  displayByTag("notEssential");
   if(!devMode) {
-    resetToEssential("isEssential");
+    // resetToEssential("notEssential");
   }
 }
 
@@ -160,16 +160,31 @@ function displayByTag(tag) {
      }
    }
    if(tag === "notEssential") {
-     document.getElementById("rulesDisplayed").innerText = "All";
+     document.getElementById("rulesDisplayed").innerText = "All of them";
    } else {
-     document.getElementById("rulesDisplayed").innerText = tag;
+     document.getElementById("rulesDisplayed").innerText = tag.replaceAll("_", " ");
    }
 
   sortTableByVisibility();
 
 }
 
-function resetToEssential(tag) {
+function displayAllAdditionalTags() {
+  hideAll();
+  var tableRows = document.getElementsByTagName("tr");
+  console.log({tableRows});
+  for (i = 1; i < (tableRows.length); i++) {
+    if(!tableRows[i].classList.contains("Clean_Code_Official") &&
+        !tableRows[i].classList.contains("Code_Review_Official")) {
+      tableRows[i].style.visibility = "visible";
+    }
+  }
+  document.getElementById("rulesDisplayed").innerText = "All additional rules";
+
+  sortTableByVisibility();
+}
+
+/*function resetToEssential(tag) {
   console.log({tag});
   var tableRows = document.getElementsByTagName("tr");
   console.log({tableRows});
@@ -182,7 +197,7 @@ function resetToEssential(tag) {
     }
   }
   document.getElementById("rulesDisplayed").innerText = "Essential Rules";
-}
+}*/
 
 function hideAll() {
   var tableRows = document.getElementsByTagName("tr");
