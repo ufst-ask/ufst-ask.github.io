@@ -1,4 +1,4 @@
-var devMode = true;
+var devMode = false; //Also remember any code lines tagged with "#DEV"
 
 function sortTable(columnToSort) {
   var table, rows, switching, i, x, y, shouldSwitch;
@@ -155,11 +155,11 @@ function displayByTag(tag) {
    var tableRows = document.getElementsByTagName("tr");
   console.log({tableRows});
    for (i = 1; i < (tableRows.length); i++) {
-     if(tableRows[i].classList.contains(tag)) {
+     if(tableRows[i].classList.contains(tag) || tag === "ALL") {
        tableRows[i].style.visibility = "visible";
      }
    }
-   if(tag === "notEssential") {
+   if(tag === "ALL") {
      document.getElementById("rulesDisplayed").innerText = "All of them";
    } else {
      document.getElementById("rulesDisplayed").innerText = tag.replaceAll("_", " ");
@@ -169,7 +169,7 @@ function displayByTag(tag) {
 
 }
 
-function displayAllAdditionalTags() {
+function displayAllSupplementaryTags() {
   hideAll();
   var tableRows = document.getElementsByTagName("tr");
   console.log({tableRows});

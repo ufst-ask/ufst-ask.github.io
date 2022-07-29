@@ -21,7 +21,7 @@
 <body class="bg-light">
 <div class="container py-3" id="page-container">
 	<h3><b>Uffi</b></h3>
-	<p1>A checklist and learning tool to aid in code reviewing based on agreed upon rules</p1>
+	<p1>A checklist and learning tool to aid in code reviewing based on agreed-upon rules.</p1>
 	<br>
 	<p1>Code examples below are not snippets which can be used in the project.</p1>
 	<br> <br>
@@ -32,7 +32,7 @@
 	<h5> Display by tag</h5>
 	<button class="btn btn-sm btn-success rounded-0 my-2" onclick='displayByTag("Clean_Code_Official")'><b>Clean Code Official</b></button>
 	<button class="btn btn-sm btn-primary rounded-0 my-2" onclick='displayByTag("Code_Review_Official")'><b>Code Review Official</b></button>
-	<button class="btn btn-sm btn-default rounded-0 my-2" onclick='displayByTag("notEssential")'><b>Display all</b></button>
+	<button class="btn btn-sm btn-default rounded-0 my-2" onclick='displayByTag("ALL")'><b>Display all</b></button>
 	<br>
 	<br>
 <!--	<button class="btn btn-sm btn-default rounded-0 my-2" onclick='displayByTag("notEssential")'>All</button> ,-->
@@ -45,7 +45,7 @@
 	<button class="btn btn-sm btn-warning rounded-0 my-2" onclick='displayByTag("Variables")'><b>Variables</b></button>
 	<button class="btn btn-sm btn-warning rounded-0 my-2" onclick='displayByTag("Tests")'><b>Tests</b></button>
 	<button class="btn btn-sm btn-warning rounded-0 my-2" onclick='displayByTag("Other")'><b>Other</b></button>
-	<button class="btn btn-sm btn-warning rounded-0 my-2" onclick='displayAllAdditionalTags()'><b>All additional rules</b></button>
+	<button class="btn btn-sm btn-warning rounded-0 my-2" onclick='displayAllSupplementaryTags()'><b>All supplementary rules</b></button>
 	<br>
 	<button class="btn btn-sm btn-default rounded-0 my-2" onclick='document.getElementById("table-list").classList.toggle("hidePriority")'><b>Show/hide priority columns</b></button>
 	<br>
@@ -115,13 +115,13 @@
 		<span class="closeRulesLoad">&times;</span>
 		<b>Load custom rules</b>
 		<br>
-		URL: <input type ="text" id="userDefinedJsonURL"> <button class="btn btn-sm btn-default rounded-0 my-2" onclick = "load_data_userDefined()" >Load URL</button>
+		URL: <input type ="text" id="userDefinedJsonURL"> <button class="btn btn-sm btn-default rounded-0 my-2" onclick = "load_data_userDefined()" ><b>Load URL</b></button>
 		<br>
 		<form id="upload">
 			<input type="file" id="file" accept=".json">
-			<button class="btn btn-sm btn-default rounded-0 my-2" onclick = "loadUserDefinedJSON()" >Load file</button>
+			<button class="btn btn-sm btn-default rounded-0 my-2" onclick = "loadUserDefinedJSON()" ><b>Load file</b></button>
 		</form>
-		<button type="button" class="btn btn-sm btn-default rounded-0 my-2" id="reload_data">Load default</button>
+		<button type="button" class="btn btn-sm btn-default rounded-0 my-2" id="reload_data"><b>Load default</b></button>
 	</div>
 </div>
 
