@@ -22,8 +22,9 @@ function sortTable(columnToSort) {
 
       //check if the two rows should switch place:
       if(columnToSort == 0) { //ID
-        let xNumber = parseInt(x.innerHTML.toLowerCase());
-        let yNumber = parseInt(y.innerHTML.toLowerCase());
+        let xNumber = parseInt(x.id.toLowerCase());
+        let yNumber = parseInt(y.id.toLowerCase());
+
         if (xNumber > yNumber) {
           //if so, mark as a switch and break the loop:
           shouldSwitch = true;
@@ -150,7 +151,6 @@ function addReferences(ruleId ) {
 }
 
 function displayByTag(tag) {
-  console.log({tag});
   hideAll();
    var tableRows = document.getElementsByTagName("tr");
   console.log({tableRows});
@@ -159,7 +159,14 @@ function displayByTag(tag) {
        tableRows[i].style.visibility = "visible";
      }
    }
+   if(tag === "notEssential") {
+     document.getElementById("rulesDisplayed").innerText = "All";
+   } else {
+     document.getElementById("rulesDisplayed").innerText = tag;
+   }
+
   sortTableByVisibility();
+
 }
 
 function resetToEssential(tag) {
@@ -174,6 +181,7 @@ function resetToEssential(tag) {
       tableRows[i].style.visibility = "collapse";
     }
   }
+  document.getElementById("rulesDisplayed").innerText = "Essential Rules";
 }
 
 function hideAll() {

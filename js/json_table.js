@@ -1,5 +1,6 @@
 var rulesData = null;
 var jsonURL = null;
+const ruleTyoeNameLength = 14;
 
 function devLoad() {
 	const txt = ""
@@ -29,7 +30,25 @@ function createTableFromData() {
 				rulesData[k].tags[0] + ' ' + rulesData[k].tags[1] + ' ' + rulesData[k].tags[2] + ' ' + rulesData[k].tags[3] + ' ' + rulesData[k].tags[4] + '">')
 
 			// first column data
-			tr.append('<td class="py-1 px-2 text-center">' + (i++) + '</td>')
+			var tempID = i++;
+			switch (rulesData[k].name.slice(0,ruleTyoeNameLength)) {
+				case "cleanOfficial_":
+					tr.append('<td class="py-1 px-2 text-center" id =' + tempID + '><p style="color:darkgreen">&block;&nbsp;&nbsp;' + tempID + '</p></td>')
+					rulesData[k].name = rulesData[k].name.slice(ruleTyoeNameLength);
+					break;
+				case "othCleanSolid_":
+					tr.append('<td class="py-1 px-2 text-center" id =' + tempID + '><p style="color:darkorange">&block;&nbsp;&nbsp;' + tempID + '</p></td>')
+					rulesData[k].name = rulesData[k].name.slice(ruleTyoeNameLength);
+					break;
+				case "reviewOfficia_":
+					tr.append('<td class="py-1 px-2 text-center" id =' + tempID + '><p style="color:midnightblue">&block;&nbsp;&nbsp;' + tempID + '</p></td>')
+					rulesData[k].name = rulesData[k].name.slice(ruleTyoeNameLength);
+					break;
+				default:
+					tr.append('<td class="py-1 px-2 text-center" id =' + tempID + '>' + tempID + '</td>')
+					// ruleName = rulesData[k].name;
+					break;
+			}
 
 			// second column data
 			if (typeof rulesData[k].infoBody === 'string' && rulesData[k].infoBody.length === 0) {

@@ -26,18 +26,7 @@
 	<p1>Code examples below are not snippets which can be used in the project.</p1>
 	<br> <br>
 
-	<b>Load custom rules</b>
-	<br>
-	URL: <input type ="text" id="userDefinedJsonURL"> <button class="btn btn-sm btn-success rounded-0 my-2" onclick = "load_data_userDefined()" >Load URL</button>
-	<br>
-	<!--			Upload JSON file with rules <input type="file" id="userDefinedJSON" multiple size="1" onchange="loadUserDefinedJSON()">-->
-	<!--			<p id="uploadStatus"></p>-->
-	<form id="upload">
-		<!--				<label for="file">Select file </label>-->
-		<input type="file" id="file" accept=".json">
-		<button class="btn btn-sm btn-success rounded-0 my-2" onclick = "loadUserDefinedJSON()" >Load file</button>
-	</form>
-	<button type="button" class="btn btn-sm btn-success rounded-0 my-2" id="reload_data">Load default</button>
+
 	<hr>
 
 	<pr> Display </pr>
@@ -55,6 +44,7 @@
 	<br>
 	<button class="btn btn-sm btn-success rounded-0 my-2" onclick='document.getElementById("table-list").classList.toggle("hidePriority")'>Show/hide priority columns</button>
 	<br> <br>
+	<b>Rules displayed: <p1 id = "rulesDisplayed"></p1> </b>
 
 	<div id="printables">
 		<div class="to_print" id="first_element">
@@ -118,18 +108,15 @@
 	<!-- Modal content -->
 	<div class="modal-contentRulesLoad">
 		<span class="closeRulesLoad">&times;</span>
-		<h2 id="modalName"></h2>
-		<p id ="modalInfoBody"></P>
+		<b>Load custom rules</b>
 		<br>
-
-		<p style="font-weight:bold">Example</p>
-		<p style="font-family:consolas">
-		<pre>
-<b>//Bad</b><p id = "modalExampleBad"></p>
-<b>//Good</b><p id = "modalExampleGood"></p>
-			</p>
-			</pre>
-		<div id = modalReferences></div>
+		URL: <input type ="text" id="userDefinedJsonURL"> <button class="btn btn-sm btn-success rounded-0 my-2" onclick = "load_data_userDefined()" >Load URL</button>
+		<br>
+		<form id="upload">
+			<input type="file" id="file" accept=".json">
+			<button class="btn btn-sm btn-success rounded-0 my-2" onclick = "loadUserDefinedJSON()" >Load file</button>
+		</form>
+		<button type="button" class="btn btn-sm btn-success rounded-0 my-2" id="reload_data">Load default</button>
 	</div>
 </div>
 
