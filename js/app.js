@@ -121,7 +121,7 @@ function openMoreInfo(ruleId ) {
   console.log({jsonElement: ruleId});
   var modal = document.getElementById("myModal");
   modal.style.display = "block";
-  document.getElementById("modalName").innerText = rulesData[ruleId].name;
+  document.getElementById("modalName").innerText = (ruleId + 1) + ": " + rulesData[ruleId].name;
 
   infoText = replaceStandardTextIfRecognised(rulesData[ruleId].infoBody);
   document.getElementById("modalInfoBody").innerText = infoText;
