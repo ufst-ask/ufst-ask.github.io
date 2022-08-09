@@ -51,8 +51,11 @@ function createTableFromData() {
 			}
 
 			// second column data
-			if ((typeof rulesData[k].infoBody === 'string' && rulesData[k].infoBody.length === 0 ) && (
-				rulesData[k].references.length === 0) ) {
+			if ((typeof rulesData[k].infoBody === 'string' && rulesData[k].infoBody.length === 0 )
+				&& (rulesData[k].references.length === 0)
+				&& (rulesData[k].exampleBad.length === 0)
+				&& (rulesData[k].exampleGood.length === 0)
+			) {
 				tr.append('<td class="py-1 px-2" id =' + rulesData[k].name + '>' + rulesData[k].name + ' </td>')
 			} else {
 				tr.append('<td class="py-1 px-2" id =' + rulesData[k].name + '> <button id="BtnMoreInfo" class="button" onclick = "openMoreInfo('+k+')">' + rulesData[k].name + '</button></td>')
