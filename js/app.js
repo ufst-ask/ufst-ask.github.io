@@ -1,4 +1,4 @@
-var devMode = false; //Also remember any code lines tagged with "#DEV"
+var devMode = true; //Also remember any code lines tagged with "#DEV"
 
 function sortTable(columnToSort) {
   var table, rows, switching, i, x, y, shouldSwitch;

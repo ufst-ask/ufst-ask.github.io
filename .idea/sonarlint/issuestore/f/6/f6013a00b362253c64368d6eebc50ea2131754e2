@@ -1,0 +1,31 @@
+
+GWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(¸í—×
+GWeb:BoldAndItalicTagsCheck!"!Replace this <b> tag by <strong>.(ÎÀ—
+GWeb:BoldAndItalicTagsCheck""!Replace this <b> tag by <strong>.(äÅÏ¹
+GWeb:BoldAndItalicTagsCheck#"!Replace this <b> tag by <strong>.(¯·´Ã
+NWeb:AvoidCommentedOutCodeCheck&"Remove this commented out code.(™™Ëšûÿÿÿÿ
+NWeb:AvoidCommentedOutCodeCheck'"Remove this commented out code.(½Äôôüÿÿÿÿ
+LWeb:BoldAndItalicTagsCheck*"!Replace this <b> tag by <strong>.(Ìñàƒøÿÿÿÿ
+GWeb:BoldAndItalicTagsCheck+"!Replace this <b> tag by <strong>.(ˆãõä
+GWeb:BoldAndItalicTagsCheck,"!Replace this <b> tag by <strong>.(§ïüˆ
+GWeb:BoldAndItalicTagsCheck-"!Replace this <b> tag by <strong>.(ìÖôì
+LWeb:BoldAndItalicTagsCheck."!Replace this <b> tag by <strong>.(£Ğ£âúÿÿÿÿ
+LWeb:BoldAndItalicTagsCheck/"!Replace this <b> tag by <strong>.(ØØÇÓûÿÿÿÿ
+GWeb:BoldAndItalicTagsCheck0"!Replace this <b> tag by <strong>.(“í±ß
+GWeb:BoldAndItalicTagsCheck2"!Replace this <b> tag by <strong>.(š¹‹Ì
+HWeb:TableWithoutCaptionCheck9" Add a description to this table.(ë¸ä²
+IWeb:AvoidCommentedOutCodeCheck<"Remove this commented out code.(“ã”§
+LWeb:BoldAndItalicTagsCheck>"!Replace this <b> tag by <strong>.(¶Á²Öøÿÿÿÿ
+LWeb:BoldAndItalicTagsCheck@"!Replace this <b> tag by <strong>.(öğ’¢ıÿÿÿÿ
+GWeb:BoldAndItalicTagsCheckB"!Replace this <b> tag by <strong>.(îø˜‡
+NWeb:AvoidCommentedOutCodeCheckC"Remove this commented out code.(šÄÅÃøÿÿÿÿ
+IWeb:AvoidCommentedOutCodeCheckD"Remove this commented out code.(åÇØ
+HWeb:BoldAndItalicTagsCheckE"Replace this <i> tag by <em>.(ëİíõşÿÿÿÿ
+LWeb:BoldAndItalicTagsCheckG"!Replace this <b> tag by <strong>.(“²ıõşÿÿÿÿ
+GWeb:BoldAndItalicTagsCheckI"!Replace this <b> tag by <strong>.(ÈéàÙ
+LWeb:BoldAndItalicTagsCheckf"!Replace this <b> tag by <strong>.(ã‘Œ˜ûÿÿÿÿ
+GWeb:BoldAndItalicTagsCheckg"!Replace this <b> tag by <strong>.(êÙË
+GWeb:BoldAndItalicTagsCheckt"!Replace this <b> tag by <strong>.(¼ µ½
+LWeb:BoldAndItalicTagsCheckv"!Replace this <b> tag by <strong>.(ÚÙúâüÿÿÿÿ
+FWeb:BoldAndItalicTagsCheckz"!Replace this <b> tag by <strong>.(÷ÓƒF
+FWeb:BoldAndItalicTagsCheck|"!Replace this <b> tag by <strong>.(ó»¡x
